@@ -5,15 +5,23 @@ import AnomalyPanel from './components/AnomalyPanel'
 
 function App() {
   const [lang, setLang] = useState('en')
-  const [darkMode, setDarkMode] = useState(true) // Defaulting to dark mode to match high-visual Stitch black styling
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('theme')
+    if (saved !== null) {
+      return saved === 'dark'
+    }
+    return true // Defaulting to dark mode to match high-visual Stitch black styling
+  })
   const [lowBandwidth, setLowBandwidth] = useState(false)
 
-  // Sync dark mode class on <html> element
+  // Sync dark mode class on <html> element and save selection
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
     } else {
       document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
     }
   }, [darkMode])
 

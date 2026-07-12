@@ -68,5 +68,75 @@
       "en": "Documentation variance detected at Mundra Port",
       "hi": "मुंद्रा पोर्ट पर प्रलेखन भिन्नता का पता चला"
     }
+  },
+  {
+    "id": "AI-1047",
+    "rank": 6,
+    "category": "escalation",
+    "tagLabel": "CRITICAL",
+    "title": {
+      "en": "Cold chain failure: Bio-Shipment #9910",
+      "hi": "कोल्ड चेन विफलता: बायो-शिपमेंट #9910"
+    },
+    "context": {
+      "en": "Sensor reports +8°C (Limit: +2°C) — Critical vaccines load",
+      "hi": "सेंसर की रिपोर्ट +8°C (सीमा: +2°C) — महत्वपूर्ण वैक्सीन लोड"
+    }
+  },
+  {
+    "id": "AI-1048",
+    "rank": 7,
+    "category": "re-route",
+    "tagLabel": "RE-ROUTE",
+    "title": {
+      "en": "Bridge maintenance bypass: NH62",
+      "hi": "पुल रखरखाव बाईपास: NH62"
+    },
+    "context": {
+      "en": "Re-routing heavy loaders via SH10 — adds 42km to route",
+      "hi": "SH10 के माध्यम से भारी लोडरों का पुनः मार्ग — मार्ग में 42 किमी जोड़ता है"
+    }
+  },
+  {
+    "id": "AI-1049",
+    "rank": 8,
+    "category": "delay",
+    "tagLabel": "SENSITIVE",
+    "title": {
+      "en": "Vessel connection risk: Mundra Port",
+      "hi": "पोत कनेक्शन जोखिम: मुंद्रा पोर्ट"
+    },
+    "context": {
+      "en": "Train feeder delayed by 3 hours — risk of missing cargo load",
+      "hi": "ट्रेन फीडर में 3 घंटे की देरी — कार्गो लोड छूटने का जोखिम"
+    }
+  },
+  {
+    "id": "AI-1050",
+    "rank": 9,
+    "category": "safety",
+    "tagLabel": "SAFETY",
+    "title": {
+      "en": "Speed limit violation: MH-43-CZ",
+      "hi": "गति सीमा उल्लंघन: MH-43-CZ"
+    },
+    "context": {
+      "en": "Current speed: 94 km/h (Limit: 70 km/h) — Rainy zone warning",
+      "hi": "वर्तमान गति: 94 किमी/घंटा (सीमा: 70 किमी/घंटा) — वर्षा क्षेत्र की चेतावनी"
+    }
+  },
+  {
+    "id": "AI-1051",
+    "rank": 10,
+    "category": "compliance",
+    "tagLabel": "COMPLIANCE",
+    "title": {
+      "en": "E-Way bill expiry: MH-14-GH-2200",
+      "hi": "ई-वे बिल समाप्ति: MH-14-GH-2200"
+    },
+    "context": {
+      "en": "Expires in 1.5 hours — Vehicle currently at Nagpur checkpost",
+      "hi": "1.5 घंटे में समाप्त — वाहन वर्तमान में नागपुर चेकपोस्ट पर है"
+    }
   }
 ]

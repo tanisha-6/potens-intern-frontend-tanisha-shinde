@@ -112,5 +112,119 @@
       "en": "REMAINING",
       "hi": "शेष"
     }
+  },
+  {
+    "id": "AN-9987",
+    "severity": "critical",
+    "detectedAt": "2026-07-12T13:12:00Z",
+    "metric": "hard_braking",
+    "title": {
+      "en": "Hard Braking Incident",
+      "hi": "हार्ड ब्रेकिंग घटना"
+    },
+    "subtitle": {
+      "en": "Location: Mumbai Exp (MH-43)",
+      "hi": "स्थान: मुंबई एक्सप्रेस (MH-43)"
+    },
+    "deviationLabel": "15 m/s²",
+    "deviationSublabel": {
+      "en": "DECEL RATE",
+      "hi": "मंदन दर"
+    }
+  },
+  {
+    "id": "AN-9988",
+    "severity": "warning",
+    "detectedAt": "2026-07-12T12:45:00Z",
+    "metric": "unauthorized_parking",
+    "title": {
+      "en": "Unauthorized Parking",
+      "hi": "अनधिकृत पार्किंग"
+    },
+    "subtitle": {
+      "en": "Highway 48: Shoulder stop",
+      "hi": "हाईवे 48: शोल्डर स्टॉप"
+    },
+    "deviationLabel": "45m",
+    "deviationSublabel": {
+      "en": "DURATION",
+      "hi": "अवधि"
+    }
+  },
+  {
+    "id": "AN-9989",
+    "severity": "info",
+    "detectedAt": "2026-07-12T12:00:00Z",
+    "metric": "gps_ping_miss",
+    "title": {
+      "en": "GPS Ping Missed",
+      "hi": "जीपीएस पिंग छूटा"
+    },
+    "subtitle": {
+      "en": "Device: IoT-Tracker-Z8",
+      "hi": "डिवाइस: IoT-ट्रैकर-Z8"
+    },
+    "deviationLabel": "2 cycles",
+    "deviationSublabel": {
+      "en": "MISSED",
+      "hi": "छूटा हुआ"
+    }
+  },
+  {
+    "id": "AN-9990",
+    "severity": "critical",
+    "detectedAt": "2026-07-12T11:30:00Z",
+    "metric": "cabin_temp",
+    "title": {
+      "en": "Cabin Temp Alert",
+      "hi": "कैबिन तापमान अलर्ट"
+    },
+    "subtitle": {
+      "en": "Truck ID: MH-14-EF-9922",
+      "hi": "ट्रक आईडी: MH-14-EF-9922"
+    },
+    "deviationLabel": "+38°C",
+    "deviationSublabel": {
+      "en": "OVERHEAT",
+      "hi": "अत्यधिक गर्मी"
+    }
+  },
+  {
+    "id": "AN-9991",
+    "severity": "warning",
+    "detectedAt": "2026-07-12T10:15:00Z",
+    "metric": "geofence_exit",
+    "title": {
+      "en": "Unexpected Geofence Exit",
+      "hi": "अप्रत्याशित जियोफेंस निकास"
+    },
+    "subtitle": {
+      "en": "Hub 02: Nagpur Warehouse",
+      "hi": "हब 02: नागपुर गोदाम"
+    },
+    "deviationLabel": "EXIT",
+    "deviationSublabel": {
+      "en": "UNSCHEDULED",
+      "hi": "अनिर्धारित"
+    }
+  },
+  {
+    "id": "AN-9992",
+    "severity": "info",
+    "detectedAt": "2026-07-12T09:00:00Z",
+    "metric": "tire_pressure",
+    "title": {
+      "en": "Tire Pressure Low",
+      "hi": "टायर का दबाव कम"
+    },
+    "subtitle": {
+      "en": "Rear Right Axis: #TRK-1044",
+      "hi": "पीछे का दायां अक्ष: #TRK-1044"
+    },
+    "deviationLabel": "-8 PSI",
+    "deviationSublabel": {
+      "en": "UNDERFLATED",
+      "hi": "कम फुलाया हुआ"
+    }
   }
 ]

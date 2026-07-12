@@ -106,7 +106,7 @@ export default function Header({
         </button>
 
         {/* Bandwidth Toggle */}
-        <button
+        {/* <button
           onClick={() => setLowBandwidth(!lowBandwidth)}
           className={`flex items-center text-on-surface-variant hover:text-primary transition-colors duration-150 focus:outline-none ${
             lowBandwidth ? 'text-secondary' : 'text-on-surface-variant'
@@ -116,7 +116,7 @@ export default function Header({
           <span className="material-symbols-outlined text-[20px]">
             signal_cellular_alt
           </span>
-        </button>
+        </button> */}
 
       </div>
     </header>

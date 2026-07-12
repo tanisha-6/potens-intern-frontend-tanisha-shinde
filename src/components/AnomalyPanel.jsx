@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import strings from '../i18n/strings.json';
 import anomalies from '../data/anomalies.json';
 import { formatRelativeTime } from '../utils/formatRelativeTime';
@@ -68,6 +68,25 @@ export default function AnomalyPanel({ lang }) {
     return new Date(b.detectedAt) - new Date(a.detectedAt);
   });
 
+  const [expanded, setExpanded] = useState(false);
+  const containerRef = useRef(null);
+
+  // Smoothly scroll to the first new item on expand, and back to top on collapse
+  useEffect(() => {
+    if (containerRef.current) {
+      if (expanded) {
+        setTimeout(() => {
+          const firstNewElement = containerRef.current.children[6];
+          if (firstNewElement) {
+            firstNewElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 220);
+      } else {
+        containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  }, [expanded]);
+
   return (
     <div className="flex flex-col h-full select-none transition-colors duration-300 overflow-hidden">
       
@@ -103,12 +122,24 @@ export default function AnomalyPanel({ lang }) {
       {/* Table Body (Flex Container with Independent vertical scrolling) */}
       {/* Row height layout and paddings (py-4) are standardized and rows support hover animations */}
       {/* Solid dividers (divide-divider-20 / border-divider-20) prevent transparency border bugs */}
-      <div className="flex-grow overflow-y-auto pr-1 flex flex-col divide-y divide-outline-variant mb-6 scrollbar-thin">
-        {sortedAnomalies.map((row) => {
+      <div ref={containerRef} className="flex-grow overflow-y-auto pr-1 flex flex-col mb-6 scrollbar-thin">
+        {sortedAnomalies.map((row, index) => {
+          const isHidden = index >= 6 && !expanded;
+          const showBorder = expanded ? (index < sortedAnomalies.length - 1) : (index < 5);
           return (
             <div
               key={row.id}
-              className={`flex items-center justify-between py-4 pl-11 pr-2 border-b border-outline-variant last:border-b-0 ${getSeverityClass(row.severity)} hover:bg-surface-variant/25 transition-all duration-150 shrink-0`}
+              style={{
+                maxHeight: isHidden ? '0px' : '250px',
+                opacity: isHidden ? 0 : 1,
+                paddingTop: isHidden ? '0px' : '',
+                paddingBottom: isHidden ? '0px' : '',
+                borderBottomWidth: isHidden ? '0px' : '',
+                overflow: 'hidden'
+              }}
+              className={`transition-all duration-200 ease-in-out flex items-center justify-between py-4 pl-11 pr-2 ${
+                showBorder ? 'border-b border-outline-variant' : ''
+              } ${getSeverityClass(row.severity)} hover:bg-surface-variant/25 transition-all duration-150 shrink-0`}
             >
               
               {/* Column 1: Details (75% Width) */}
@@ -129,6 +160,19 @@ export default function AnomalyPanel({ lang }) {
             </div>
           );
         })}
+      </div>
+
+      {/* View More Button */}
+      <div className="flex justify-center py-4 shrink-0 border-t border-outline-variant pl-8">
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="text-data-mono font-data-mono text-outline hover:text-primary transition-colors duration-150 uppercase tracking-wider font-semibold focus:outline-none flex items-center gap-1"
+        >
+          <span className={`material-symbols-outlined text-[16px] transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}>
+            expand_more
+          </span>
+          {expanded ? strings.common.viewLess[lang] : strings.common.viewMore[lang]}
+        </button>
       </div>
 
     </div>

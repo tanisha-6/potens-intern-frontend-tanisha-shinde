@@ -50,5 +50,10 @@
     "navigate": { "en": "j / k to move", "hi": "j / k से नेविगेट करें" },
     "approveKey": { "en": "a to approve", "hi": "स्वीकृत करने हेतु a" },
     "holdKey": { "en": "h to hold", "hi": "रोकने हेतु h" }
+  },
+  "common": {
+    "viewMore": { "en": "View more", "hi": "और देखें" },
+    "viewLess": { "en": "View less", "hi": "कम देखें" },
+    "allShown": { "en": "All items shown", "hi": "सभी आइटम प्रदर्शित" }
   }
 }

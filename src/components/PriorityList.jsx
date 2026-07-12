@@ -1,9 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import strings from '../i18n/strings.json';
 import actionItems from '../data/actionItems.json';
 
 export default function PriorityList({ lang }) {
   const t = strings.actionItems;
+  const [expanded, setExpanded] = useState(false);
+  const containerRef = useRef(null);
+
+  // Smoothly scroll to the first new item on expand, and back to top on collapse
+  useEffect(() => {
+    if (containerRef.current) {
+      if (expanded) {
+        setTimeout(() => {
+          const firstNewElement = containerRef.current.children[5];
+          if (firstNewElement) {
+            firstNewElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 220);
+      } else {
+        containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  }, [expanded]);
 
   // Track the action status of each item: 'pending' | 'approved' | 'held'
   const [statuses, setStatuses] = useState(() => {
@@ -73,22 +91,34 @@ export default function PriorityList({ lang }) {
         <h2 className="text-label-caps font-label-caps tracking-widest text-outline uppercase font-semibold">
           {t.sectionTitle[lang]}
         </h2>
-        <span className="text-data-mono font-data-mono text-outline uppercase tracking-wider">
+        {/* <span className="text-data-mono font-data-mono text-outline uppercase tracking-wider">
           {t.autoRefresh[lang]}
-        </span>
+        </span> */}
       </div>
 
       {/* Row Items Container (No empty-state path since items are actioned in place) */}
-      <div className="flex-1 flex flex-col justify-between divide-y divide-outline-variant">
-        {actionItems.map((item) => {
+      <div ref={containerRef} className="flex-grow overflow-y-auto flex flex-col mb-6 pr-1 scrollbar-thin">
+        {actionItems.map((item, index) => {
           const formattedRank = String(item.rank).padStart(2, '0');
           const currentStatus = statuses[item.id];
           const isActioned = currentStatus === 'approved' || currentStatus === 'held';
+          const isHidden = index >= 5 && !expanded;
+          const showBorder = expanded ? (index < actionItems.length - 1) : (index < 4);
 
           return (
             <div
               key={item.id}
-              className="flex flex-col sm:flex-row sm:items-center justify-between py-5 gap-4 transition-all duration-200 pr-8"
+              style={{
+                maxHeight: isHidden ? '0px' : '250px',
+                opacity: isHidden ? 0 : 1,
+                paddingTop: isHidden ? '0px' : '',
+                paddingBottom: isHidden ? '0px' : '',
+                borderBottomWidth: isHidden ? '0px' : '',
+                overflow: 'hidden'
+              }}
+              className={`transition-all duration-200 ease-in-out flex flex-col sm:flex-row sm:items-center justify-between py-8 gap-4 pr-8 shrink-0 ${
+                showBorder ? 'border-b border-outline-variant' : ''
+              }`}
             >
               
               {/* Left Side: Rank, Title, Context, Tag */}
@@ -176,6 +206,19 @@ export default function PriorityList({ lang }) {
             </div>
           );
         })}
+      </div>
+
+      {/* View More Button */}
+      <div className="flex justify-center py-4 shrink-0 border-t border-outline-variant pr-8">
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="text-data-mono font-data-mono text-outline hover:text-primary transition-colors duration-150 uppercase tracking-wider font-semibold focus:outline-none flex items-center gap-1"
+        >
+          <span className={`material-symbols-outlined text-[16px] transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}>
+            expand_more
+          </span>
+          {expanded ? strings.common.viewLess[lang] : strings.common.viewMore[lang]}
+        </button>
       </div>
 
       {/* Floating Toast Notification Container */}
