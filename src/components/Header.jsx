@@ -52,7 +52,7 @@ export default function Header({
   };
 
   return (
-    <header className="h-28 w-full bg-background border-b border-outline-variant/30 text-on-surface flex items-center justify-between px-8 select-none transition-colors duration-300">
+    <header className="h-28 w-full bg-background border-b border-outline-variant text-on-surface flex items-center justify-between px-8 select-none transition-colors duration-300">
       
       {/* Left: App Title & Stacked Live Clock */}
       <div className="flex flex-col items-start justify-center">
@@ -72,7 +72,7 @@ export default function Header({
         <div className="flex items-center justify-center gap-3 mt-1">
           {/* Breathing Connection Green Dot */}
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" title="Connected to feed"></span>
-          <span className="text-display-rank font-display-rank font-extrabold tabular-nums text-white leading-none">
+          <span className="text-display-rank font-display-rank font-extrabold tabular-nums text-on-surface leading-none">
             {activeCount}
           </span>
         </div>

@@ -69,10 +69,10 @@ export default function AnomalyPanel({ lang }) {
   });
 
   return (
-    <div className="flex flex-col h-full select-none pl-8 transition-colors duration-300 overflow-hidden">
+    <div className="flex flex-col h-full select-none transition-colors duration-300 overflow-hidden">
       
       {/* Section Header Row */}
-      <div className="flex items-center justify-between border-b border-outline-variant/30 pb-3 mb-2 h-10 shrink-0">
+      <div className="flex items-center justify-between border-b border-outline-variant pb-3 mb-2 h-10 shrink-0 pl-8">
         <h2 className="text-label-caps font-label-caps tracking-widest text-outline uppercase font-semibold">
           {t.sectionTitle[lang]}
         </h2>
@@ -95,19 +95,20 @@ export default function AnomalyPanel({ lang }) {
       </div>
 
       {/* Table Header Row (Muted, Small, Uppercase) */}
-      <div className="flex items-center justify-between text-label-caps font-label-caps text-outline uppercase pb-2 border-b border-outline-variant/60 px-3 shrink-0">
+      <div className="flex items-center justify-between text-label-caps font-label-caps text-outline uppercase pb-2 border-b border-outline pl-11 pr-3 shrink-0">
         <span className="w-[75%]">{t.headers.details[lang]}</span>
         <span className="w-[25%] text-right">{t.headers.detected[lang]}</span>
       </div>
 
       {/* Table Body (Flex Container with Independent vertical scrolling) */}
       {/* Row height layout and paddings (py-4) are standardized and rows support hover animations */}
-      <div className="flex-1 overflow-y-auto pr-1 flex flex-col divide-y divide-outline-variant/20 mb-6 scrollbar-thin">
+      {/* Solid dividers (divide-divider-20 / border-divider-20) prevent transparency border bugs */}
+      <div className="flex-grow overflow-y-auto pr-1 flex flex-col divide-y divide-outline-variant mb-6 scrollbar-thin">
         {sortedAnomalies.map((row) => {
           return (
             <div
               key={row.id}
-              className={`flex items-center justify-between py-4 pl-3 pr-2 border-b border-outline-variant/20 last:border-b-0 ${getSeverityClass(row.severity)} hover:bg-surface-variant/25 transition-all duration-150 shrink-0`}
+              className={`flex items-center justify-between py-4 pl-11 pr-2 border-b border-outline-variant last:border-b-0 ${getSeverityClass(row.severity)} hover:bg-surface-variant/25 transition-all duration-150 shrink-0`}
             >
               
               {/* Column 1: Details (75% Width) */}
@@ -121,7 +122,7 @@ export default function AnomalyPanel({ lang }) {
               </div>
 
               {/* Column 2: Detected Time - Relative (25% Width) */}
-              <div className="w-[25%] text-right text-data-mono font-data-mono text-outline shrink-0">
+              <div className="w-[25%] text-right text-data-mono font-data-mono text-on-surface-variant shrink-0">
                 {formatRelativeTime(row.detectedAt, lang)}
               </div>
 

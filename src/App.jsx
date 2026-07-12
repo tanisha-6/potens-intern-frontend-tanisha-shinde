@@ -29,15 +29,15 @@ function App() {
       />
 
       <main className="flex-1 px-8 py-6 xl:overflow-hidden">
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-0 h-full divide-y xl:divide-y-0 xl:divide-x divide-outline-variant/30">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-0 h-full divide-y xl:divide-y-0 xl:divide-x divide-outline-variant">
           
           {/* Priority List (Left Column, col-span-8) */}
-          <div className="col-span-12 xl:col-span-8 xl:h-full xl:overflow-hidden pb-6 xl:pb-0 pr-0 xl:pr-8">
+          <div className="col-span-12 xl:col-span-8 xl:h-full xl:overflow-hidden pb-6 xl:pb-0">
             <PriorityList lang={lang} />
           </div>
 
           {/* Anomaly Panel (Right Column, col-span-4) */}
-          <div className="col-span-12 xl:col-span-4 xl:h-full xl:overflow-hidden pt-6 xl:pt-0 pl-0 xl:pl-8">
+          <div className="col-span-12 xl:col-span-4 xl:h-full xl:overflow-hidden pt-6 xl:pt-0">
             <AnomalyPanel lang={lang} />
           </div>
 

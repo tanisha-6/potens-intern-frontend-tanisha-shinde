@@ -26,6 +26,7 @@ export default function PriorityList({ lang }) {
         return 'bg-tertiary-container text-on-tertiary-container';
       case 'SAFETY':
       case 'COMPLIANCE':
+        return 'bg-primary-container text-on-primary-container';
       default:
         return 'bg-surface-container-highest text-on-surface';
     }
@@ -65,10 +66,10 @@ export default function PriorityList({ lang }) {
   };
 
   return (
-    <div className="flex flex-col h-full select-none pr-8 transition-colors duration-300 relative">
+    <div className="flex flex-col h-full select-none transition-colors duration-300 relative">
       
       {/* Section Header Row */}
-      <div className="flex items-center justify-between border-b border-outline-variant/30 pb-3 mb-2 h-10">
+      <div className="flex items-center justify-between border-b border-outline-variant pb-3 mb-2 h-10 pr-8">
         <h2 className="text-label-caps font-label-caps tracking-widest text-outline uppercase font-semibold">
           {t.sectionTitle[lang]}
         </h2>
@@ -78,7 +79,7 @@ export default function PriorityList({ lang }) {
       </div>
 
       {/* Row Items Container (No empty-state path since items are actioned in place) */}
-      <div className="flex-1 flex flex-col justify-between divide-y divide-outline-variant/30">
+      <div className="flex-1 flex flex-col justify-between divide-y divide-outline-variant">
         {actionItems.map((item) => {
           const formattedRank = String(item.rank).padStart(2, '0');
           const currentStatus = statuses[item.id];
@@ -87,14 +88,14 @@ export default function PriorityList({ lang }) {
           return (
             <div
               key={item.id}
-              className="flex flex-col sm:flex-row sm:items-center justify-between py-5 gap-4 transition-all duration-200"
+              className="flex flex-col sm:flex-row sm:items-center justify-between py-5 gap-4 transition-all duration-200 pr-8"
             >
               
               {/* Left Side: Rank, Title, Context, Tag */}
               <div className="flex items-start gap-4 flex-1">
                 
                 {/* Large Rank Number */}
-                <div className="text-display-rank font-display-rank text-outline-variant select-none min-w-[56px] text-center font-bold">
+                <div className="text-display-rank font-display-rank text-outline select-none min-w-[56px] text-center font-bold">
                   {formattedRank}
                 </div>
 
@@ -117,7 +118,7 @@ export default function PriorityList({ lang }) {
 
                   {/* Context Info */}
                   <p className={`text-body-md font-body-md italic leading-snug transition-all duration-200 ${
-                    isActioned ? 'text-outline/40 opacity-40' : 'text-outline'
+                    isActioned ? 'text-on-surface-variant opacity-40' : 'text-on-surface-variant'
                   }`}>
                     {item.context[lang]}
                   </p>
