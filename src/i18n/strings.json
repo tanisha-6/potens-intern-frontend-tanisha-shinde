@@ -14,9 +14,11 @@
     "autoRefresh": { "en": "AUTO-REFRESH: 12s", "hi": "ऑटो-रिफ्रेश: 12s" },
     "approve": { "en": "Approve", "hi": "स्वीकृत करें" },
     "hold": { "en": "Hold", "hi": "रोकें" },
+    "undo": { "en": "Undo", "hi": "पूर्ववत करें" },
     "emptyState": { "en": "You're all caught up.", "hi": "आप पूरी तरह अपडेटेड हैं।" },
     "toastApproved": { "en": "Approved", "hi": "स्वीकृत" },
     "toastHeld": { "en": "On hold", "hi": "होल्ड पर" },
+    "toastReverted": { "en": "Reverted", "hi": "पूर्ववत किया गया" },
     "tags": {
       "CRITICAL": { "en": "CRITICAL", "hi": "गंभीर" },
       "SENSITIVE": { "en": "SENSITIVE", "hi": "संवेदनशील" },
