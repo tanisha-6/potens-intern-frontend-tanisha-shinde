@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import strings from '../i18n/strings.json';
 
 export default function Header({
@@ -11,14 +11,57 @@ export default function Header({
 }) {
   const t = strings.nav;
 
+  // Live active shipments counter (Client-side simulation)
+  const [activeCount, setActiveCount] = useState(42);
+  const [currentTime, setCurrentTime] = useState(() => new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveCount((prev) => {
+        const delta = Math.floor(Math.random() * 3) - 1; // -1, 0, or +1
+        const next = prev + delta;
+        // Bound count strictly between 38 and 46
+        if (next < 38) return 38;
+        if (next > 46) return 46;
+        return next;
+      });
+    }, 8000); // Fluctuate count every 8 seconds
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const clockTimer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000); // Update clock every second
+    return () => clearInterval(clockTimer);
+  }, []);
+
+  const formatDateTime = (date) => {
+    let hours = date.getHours();
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const hoursStr = String(hours).padStart(2, '0');
+
+    const dateOptions = { weekday: 'short', month: 'short', day: 'numeric' };
+    const dateString = date.toLocaleDateString(lang === 'en' ? 'en-US' : 'hi-IN', dateOptions);
+
+    return `${hoursStr}:${minutes}:${seconds} ${ampm} — ${dateString}`;
+  };
+
   return (
-    <header className="h-24 w-full bg-background border-b border-outline-variant/30 text-on-surface flex items-center justify-between px-8 select-none transition-colors duration-300">
+    <header className="h-28 w-full bg-background border-b border-outline-variant/30 text-on-surface flex items-center justify-between px-8 select-none transition-colors duration-300">
       
-      {/* Left: App Title */}
-      <div className="flex items-center">
-        <h1 className="text-headline-lg font-headline-lg text-on-surface tracking-tight font-bold select-none">
+      {/* Left: App Title & Stacked Live Clock */}
+      <div className="flex flex-col items-start justify-center">
+        <h1 className="text-[30px] font-sans font-bold text-on-surface tracking-tight leading-none select-none">
           {strings.appTitle[lang]}
         </h1>
+        <span className="text-[16px] font-data-mono text-outline mt-2 tracking-wide font-medium select-none">
+          {formatDateTime(currentTime)}
+        </span>
       </div>
 
       {/* Center: Stacked Live-Metric Block */}
@@ -26,9 +69,13 @@ export default function Header({
         <span className="text-[11px] font-label-caps tracking-widest text-outline uppercase font-semibold">
           {t.liveMetricLabel[lang]}
         </span>
-        <span className="text-display-rank font-display-rank font-extrabold tabular-nums text-white leading-none mt-1">
-          42
-        </span>
+        <div className="flex items-center justify-center gap-3 mt-1">
+          {/* Breathing Connection Green Dot */}
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" title="Connected to feed"></span>
+          <span className="text-display-rank font-display-rank font-extrabold tabular-nums text-white leading-none">
+            {activeCount}
+          </span>
+        </div>
       </div>
 
       {/* Right: Controls */}
