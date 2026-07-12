@@ -4,25 +4,39 @@
     "hi": "ऑपरेशन्स कॉकपिट"
   },
   "nav": {
-    "liveMetricLabel": { "en": "Active shipments", "hi": "सक्रिय शिपमेंट" },
-    "langToggle": { "en": "हिंदी", "hi": "English" },
+    "liveMetricLabel": { "en": "ACTIVE SHIPMENTS", "hi": "सक्रिय शिपमेंट" },
+    "langToggle": { "en": "EN/HI", "hi": "अंग्रेजी/हिंदी" },
     "darkModeToggle": { "en": "Dark mode", "hi": "डार्क मोड" },
     "lowBandwidthToggle": { "en": "Low bandwidth", "hi": "लो बैंडविड्थ" }
   },
   "actionItems": {
-    "sectionTitle": { "en": "Top 5 for today", "hi": "आज के लिए शीर्ष 5" },
+    "sectionTitle": { "en": "TOP 5 PRIORITY INTERVENTIONS — TODAY", "hi": "आज के 5 प्राथमिकता हस्तक्षेप" },
+    "autoRefresh": { "en": "AUTO-REFRESH: 12s", "hi": "ऑटो-रिफ्रेश: 12s" },
     "approve": { "en": "Approve", "hi": "स्वीकृत करें" },
     "hold": { "en": "Hold", "hi": "रोकें" },
     "emptyState": { "en": "You're all caught up.", "hi": "आप पूरी तरह अपडेटेड हैं।" },
     "toastApproved": { "en": "Approved", "hi": "स्वीकृत" },
-    "toastHeld": { "en": "On hold", "hi": "होल्ड पर" }
+    "toastHeld": { "en": "On hold", "hi": "होल्ड पर" },
+    "tags": {
+      "CRITICAL": { "en": "CRITICAL", "hi": "गंभीर" },
+      "SENSITIVE": { "en": "SENSITIVE", "hi": "संवेदनशील" },
+      "RE-ROUTE": { "en": "RE-ROUTE", "hi": "पुनः मार्ग" },
+      "SAFETY": { "en": "SAFETY", "hi": "सुरक्षा" },
+      "COMPLIANCE": { "en": "COMPLIANCE", "hi": "अनुपालन" }
+    }
   },
   "anomalies": {
-    "sectionTitle": { "en": "Flagged anomalies", "hi": "चिह्नित विसंगतियां" },
+    "sectionTitle": { "en": "FLAGGED ANOMALIES", "hi": "चिह्नित विसंगतियां" },
     "detectedAt": { "en": "Detected", "hi": "पहचाना गया" },
     "severityLow": { "en": "Low", "hi": "कम" },
     "severityMed": { "en": "Medium", "hi": "मध्यम" },
-    "severityHigh": { "en": "High", "hi": "उच्च" }
+    "severityHigh": { "en": "High", "hi": "उच्च" },
+    "headers": {
+      "details": { "en": "DETAILS", "hi": "विवरण" },
+      "detected": { "en": "DETECTED", "hi": "पहचाना गया" },
+      "deviation": { "en": "DEVIATION", "hi": "विचलन" }
+    },
+    "fleetHealthIndex": { "en": "FLEET HEALTH INDEX", "hi": "बेड़े का स्वास्थ्य सूचकांक" }
   },
   "shortcuts": {
     "legendTitle": { "en": "Keyboard shortcuts", "hi": "कीबोर्ड शॉर्टकट" },

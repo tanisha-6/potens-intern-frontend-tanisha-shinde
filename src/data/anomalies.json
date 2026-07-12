@@ -1,46 +1,116 @@
 [
   {
     "id": "AN-9981",
-    "severity": "high",
-    "detectedAt": "2026-07-12T03:12:00Z",
-    "metric": "return_rate",
-    "deviation": "+42% vs 7-day avg",
+    "severity": "critical",
+    "detectedAt": "2026-07-12T14:22:01Z",
+    "metric": "fuel_consumption",
     "title": {
-      "en": "Unusual spike in return rate — Zone 4",
-      "hi": "ज़ोन 4 में रिटर्न दर में असामान्य वृद्धि"
+      "en": "Fuel consumption spike",
+      "hi": "ईंधन की खपत में वृद्धि"
+    },
+    "subtitle": {
+      "en": "Vehicle ID: MH-40-AX-1290",
+      "hi": "वाहन आईडी: MH-40-AX-1290"
+    },
+    "deviationLabel": "+42%",
+    "deviationSublabel": {
+      "en": "vs 7-day avg",
+      "hi": "7-दिवसीय औसत की तुलना में"
     }
   },
   {
     "id": "AN-9982",
-    "severity": "med",
-    "detectedAt": "2026-07-12T02:40:00Z",
-    "metric": "avg_delivery_time",
-    "deviation": "+18% vs 7-day avg",
+    "severity": "warning",
+    "detectedAt": "2026-07-12T14:18:45Z",
+    "metric": "unscheduled_stop",
     "title": {
-      "en": "Delivery time creeping up — Zone 2",
-      "hi": "ज़ोन 2 में डिलीवरी समय में वृद्धि"
+      "en": "Unscheduled Stop",
+      "hi": "अनिर्धारित ठहराव"
+    },
+    "subtitle": {
+      "en": "Geo-Fence Breach: Sector 7",
+      "hi": "जियो-फेंस उल्लंघन: सेक्टर 7"
+    },
+    "deviationLabel": "12m",
+    "deviationSublabel": {
+      "en": "STATIONARY",
+      "hi": "स्थिर"
     }
   },
   {
     "id": "AN-9983",
-    "severity": "low",
-    "detectedAt": "2026-07-12T01:55:00Z",
-    "metric": "customer_calls",
-    "deviation": "+9% vs 7-day avg",
+    "severity": "warning",
+    "detectedAt": "2026-07-12T14:05:12Z",
+    "metric": "idle_time",
     "title": {
-      "en": "Slight uptick in support calls — Zone 1",
-      "hi": "ज़ोन 1 में सपोर्ट कॉल्स में मामूली वृद्धि"
+      "en": "Idle Time Variance",
+      "hi": "निष्क्रिय समय भिन्नता"
+    },
+    "subtitle": {
+      "en": "Hub 04: Loading Dock A",
+      "hi": "हब 04: लोडिंग डॉक A"
+    },
+    "deviationLabel": "+18%",
+    "deviationSublabel": {
+      "en": "WAIT TIME",
+      "hi": "प्रतीक्षा समय"
     }
   },
   {
     "id": "AN-9984",
-    "severity": "high",
-    "detectedAt": "2026-07-12T00:20:00Z",
-    "metric": "failed_deliveries",
-    "deviation": "+37% vs 7-day avg",
+    "severity": "info",
+    "detectedAt": "2026-07-12T13:58:33Z",
+    "metric": "route_divergence",
     "title": {
-      "en": "Failed delivery rate spike — Zone 3",
-      "hi": "ज़ोन 3 में विफल डिलीवरी दर में वृद्धि"
+      "en": "Route Divergence",
+      "hi": "मार्ग विचलन"
+    },
+    "subtitle": {
+      "en": "Asset: #TRK-9921",
+      "hi": "परिसंपत्ति: #TRK-9921"
+    },
+    "deviationLabel": "8.4km",
+    "deviationSublabel": {
+      "en": "OFF-PLAN",
+      "hi": "योजना से बाहर"
+    }
+  },
+  {
+    "id": "AN-9985",
+    "severity": "critical",
+    "detectedAt": "2026-07-12T13:42:00Z",
+    "metric": "door_sensor",
+    "title": {
+      "en": "Door Sensor Alert",
+      "hi": "दरवाजा सेंसर अलर्ट"
+    },
+    "subtitle": {
+      "en": "Container: CON-552",
+      "hi": "कंटेनर: CON-552"
+    },
+    "deviationLabel": "OPEN",
+    "deviationSublabel": {
+      "en": "UNAUTHORIZED",
+      "hi": "अनधिकृत"
+    }
+  },
+  {
+    "id": "AN-9986",
+    "severity": "warning",
+    "detectedAt": "2026-07-12T13:30:11Z",
+    "metric": "low_battery",
+    "title": {
+      "en": "Low Battery: IoT Node",
+      "hi": "कम बैटरी: IoT नोड"
+    },
+    "subtitle": {
+      "en": "Unit: SENS-X2-88",
+      "hi": "यूनिट: SENS-X2-88"
+    },
+    "deviationLabel": "12%",
+    "deviationSublabel": {
+      "en": "REMAINING",
+      "hi": "शेष"
     }
   }
 ]

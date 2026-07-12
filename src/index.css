@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+html, body {
+  background-color: #101417;
+  color: #e0e3e8;
+  font-family: 'Inter', sans-serif;
   font-feature-settings: "tnum" 1;
+}
+
+.severity-critical {
+  border-left: 3px solid #ffb4ab;
+}
+.severity-warning {
+  border-left: 3px solid #ffb783;
+}
+.severity-info {
+  border-left: 3px solid #c0c7cf;
 }

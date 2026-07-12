@@ -3,65 +3,70 @@
     "id": "AI-1042",
     "rank": 1,
     "category": "escalation",
+    "tagLabel": "CRITICAL",
     "title": {
       "en": "Shipment #4482 delayed at Pune hub",
       "hi": "शिपमेंट #4482 पुणे हब पर विलंबित"
     },
     "context": {
-      "en": "SLA breach in 40 min — Tier 1 customer, 3 prior escalations this month",
-      "hi": "40 मिनट में SLA उल्लंघन — टियर 1 ग्राहक, इस महीने 3 पूर्व एस्केलेशन"
+      "en": "SLA breach in 40 min — Tier 1 customer (Global Logistics Corp)",
+      "hi": "40 मिनट में SLA उल्लंघन — टियर 1 ग्राहक (ग्लोबल लॉजिस्टिक्स कॉर्प)"
     }
   },
   {
     "id": "AI-1043",
     "rank": 2,
-    "category": "approval",
+    "category": "re-route",
+    "tagLabel": "RE-ROUTE",
     "title": {
-      "en": "Vendor payout hold — Sharma Logistics",
-      "hi": "विक्रेता भुगतान होल्ड — शर्मा लॉजिस्टिक्स"
+      "en": "Route obstruction: NH48 Landslide",
+      "hi": "मार्ग अवरोध: NH48 भूस्खलन"
     },
     "context": {
-      "en": "₹2.4L payout pending your sign-off since yesterday 6 PM",
-      "hi": "₹2.4 लाख भुगतान कल शाम 6 बजे से आपकी स्वीकृति हेतु लंबित"
+      "en": "12 vehicles affected — ETA drift +4.5 hours",
+      "hi": "12 वाहन प्रभावित — ईटीए बहाव +4.5 घंटे"
     }
   },
   {
     "id": "AI-1044",
     "rank": 3,
     "category": "delay",
+    "tagLabel": "SENSITIVE",
     "title": {
-      "en": "Cold storage unit 3 running above threshold",
-      "hi": "कोल्ड स्टोरेज यूनिट 3 सीमा से अधिक चल रही है"
+      "en": "Temp violation: Reefer #8829",
+      "hi": "तापमान उल्लंघन: रीफ़र #8829"
     },
     "context": {
-      "en": "Temp 2.1°C above limit for 25 min — perishables at risk",
-      "hi": "25 मिनट से तापमान सीमा से 2.1°C अधिक — नाशवान सामान जोखिम में"
+      "en": "Current: -4°C | Target: -18°C — Pharmaceutical load",
+      "hi": "वर्तमान: -4°C | लक्ष्य: -18°C — फार्मास्युटिकल लोड"
     }
   },
   {
     "id": "AI-1045",
     "rank": 4,
-    "category": "escalation",
+    "category": "safety",
+    "tagLabel": "SAFETY",
     "title": {
-      "en": "Driver shortage flagged — Zone 4 evening shift",
-      "hi": "ज़ोन 4 शाम शिफ्ट में ड्राइवर की कमी"
+      "en": "Driver fatigue alert: MH-12-BQ",
+      "hi": "ड्राइवर थकान अलर्ट: MH-12-BQ"
     },
     "context": {
-      "en": "6 routes unassigned for 5 PM dispatch window",
-      "hi": "शाम 5 बजे डिस्पैच के लिए 6 रूट असाइन नहीं हुए"
+      "en": "Continuous driving: 11.5 hours — Nearest stop in 12km",
+      "hi": "सतत ड्राइविंग: 11.5 घंटे — निकटतम स्टॉप 12 किमी में"
     }
   },
   {
     "id": "AI-1046",
     "rank": 5,
-    "category": "approval",
+    "category": "compliance",
+    "tagLabel": "COMPLIANCE",
     "title": {
-      "en": "New route optimization plan — Zone 2",
-      "hi": "नई रूट अनुकूलन योजना — ज़ोन 2"
+      "en": "Customs mismatch: PK-Cargo-92",
+      "hi": "सीमा शुल्क बेमेल: PK-Cargo-92"
     },
     "context": {
-      "en": "Projected 12% fuel savings, needs approval before rollout",
-      "hi": "अनुमानित 12% ईंधन बचत, रोलआउट से पहले स्वीकृति आवश्यक"
+      "en": "Documentation variance detected at Mundra Port",
+      "hi": "मुंद्रा पोर्ट पर प्रलेखन भिन्नता का पता चला"
     }
   }
 ]
