@@ -38,6 +38,11 @@
       "detected": { "en": "DETECTED", "hi": "पहचाना गया" },
       "deviation": { "en": "DEVIATION", "hi": "विचलन" }
     },
+    "time": {
+      "justNow": { "en": "just now", "hi": "अभी-अभी" },
+      "minAgo": { "en": "min ago", "hi": "मिनट पहले" },
+      "hAgo": { "en": "h ago", "hi": "घंटा पहले" }
+    },
     "fleetHealthIndex": { "en": "FLEET HEALTH INDEX", "hi": "बेड़े का स्वास्थ्य सूचकांक" }
   },
   "shortcuts": {
