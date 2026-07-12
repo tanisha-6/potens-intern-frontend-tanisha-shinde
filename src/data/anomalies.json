@@ -1,0 +1,46 @@
+[
+  {
+    "id": "AN-9981",
+    "severity": "high",
+    "detectedAt": "2026-07-12T03:12:00Z",
+    "metric": "return_rate",
+    "deviation": "+42% vs 7-day avg",
+    "title": {
+      "en": "Unusual spike in return rate — Zone 4",
+      "hi": "ज़ोन 4 में रिटर्न दर में असामान्य वृद्धि"
+    }
+  },
+  {
+    "id": "AN-9982",
+    "severity": "med",
+    "detectedAt": "2026-07-12T02:40:00Z",
+    "metric": "avg_delivery_time",
+    "deviation": "+18% vs 7-day avg",
+    "title": {
+      "en": "Delivery time creeping up — Zone 2",
+      "hi": "ज़ोन 2 में डिलीवरी समय में वृद्धि"
+    }
+  },
+  {
+    "id": "AN-9983",
+    "severity": "low",
+    "detectedAt": "2026-07-12T01:55:00Z",
+    "metric": "customer_calls",
+    "deviation": "+9% vs 7-day avg",
+    "title": {
+      "en": "Slight uptick in support calls — Zone 1",
+      "hi": "ज़ोन 1 में सपोर्ट कॉल्स में मामूली वृद्धि"
+    }
+  },
+  {
+    "id": "AN-9984",
+    "severity": "high",
+    "detectedAt": "2026-07-12T00:20:00Z",
+    "metric": "failed_deliveries",
+    "deviation": "+37% vs 7-day avg",
+    "title": {
+      "en": "Failed delivery rate spike — Zone 3",
+      "hi": "ज़ोन 3 में विफल डिलीवरी दर में वृद्धि"
+    }
+  }
+]

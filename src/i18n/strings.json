@@ -1,0 +1,33 @@
+{
+  "appTitle": {
+    "en": "Operations Cockpit",
+    "hi": "ऑपरेशन्स कॉकपिट"
+  },
+  "nav": {
+    "liveMetricLabel": { "en": "Active shipments", "hi": "सक्रिय शिपमेंट" },
+    "langToggle": { "en": "हिंदी", "hi": "English" },
+    "darkModeToggle": { "en": "Dark mode", "hi": "डार्क मोड" },
+    "lowBandwidthToggle": { "en": "Low bandwidth", "hi": "लो बैंडविड्थ" }
+  },
+  "actionItems": {
+    "sectionTitle": { "en": "Top 5 for today", "hi": "आज के लिए शीर्ष 5" },
+    "approve": { "en": "Approve", "hi": "स्वीकृत करें" },
+    "hold": { "en": "Hold", "hi": "रोकें" },
+    "emptyState": { "en": "You're all caught up.", "hi": "आप पूरी तरह अपडेटेड हैं।" },
+    "toastApproved": { "en": "Approved", "hi": "स्वीकृत" },
+    "toastHeld": { "en": "On hold", "hi": "होल्ड पर" }
+  },
+  "anomalies": {
+    "sectionTitle": { "en": "Flagged anomalies", "hi": "चिह्नित विसंगतियां" },
+    "detectedAt": { "en": "Detected", "hi": "पहचाना गया" },
+    "severityLow": { "en": "Low", "hi": "कम" },
+    "severityMed": { "en": "Medium", "hi": "मध्यम" },
+    "severityHigh": { "en": "High", "hi": "उच्च" }
+  },
+  "shortcuts": {
+    "legendTitle": { "en": "Keyboard shortcuts", "hi": "कीबोर्ड शॉर्टकट" },
+    "navigate": { "en": "j / k to move", "hi": "j / k से नेविगेट करें" },
+    "approveKey": { "en": "a to approve", "hi": "स्वीकृत करने हेतु a" },
+    "holdKey": { "en": "h to hold", "hi": "रोकने हेतु h" }
+  }
+}
