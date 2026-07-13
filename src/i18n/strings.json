@@ -7,7 +7,8 @@
     "liveMetricLabel": { "en": "ACTIVE SHIPMENTS", "hi": "सक्रिय शिपमेंट" },
     "langToggle": { "en": "EN/HI", "hi": "अंग्रेजी/हिंदी" },
     "darkModeToggle": { "en": "Dark mode", "hi": "डार्क मोड" },
-    "lowBandwidthToggle": { "en": "Low bandwidth", "hi": "लो बैंडविड्थ" }
+    "lowBandwidthToggle": { "en": "Low bandwidth", "hi": "लो बैंडविड्थ" },
+    "feedConnected": { "en": "Connected to feed", "hi": "फीड से जुड़े हैं" }
   },
   "actionItems": {
     "sectionTitle": { "en": "TOP 5 PRIORITY INTERVENTIONS — TODAY", "hi": "आज के 5 प्राथमिकता हस्तक्षेप" },
@@ -29,6 +30,8 @@
   },
   "anomalies": {
     "sectionTitle": { "en": "FLAGGED ANOMALIES", "hi": "चिह्नित विसंगतियां" },
+    "filterTooltip": { "en": "Filter", "hi": "फ़िल्टर" },
+    "downloadTooltip": { "en": "Download", "hi": "डाउनलोड" },
     "detectedAt": { "en": "Detected", "hi": "पहचाना गया" },
     "severityLow": { "en": "Low", "hi": "कम" },
     "severityMed": { "en": "Medium", "hi": "मध्यम" },

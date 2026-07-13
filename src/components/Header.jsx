@@ -71,7 +71,7 @@ export default function Header({
         </span>
         <div className="flex items-center justify-center gap-3 mt-1">
           {/* Breathing Connection Green Dot */}
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" title="Connected to feed"></span>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" title={t.feedConnected[lang]}></span>
           <span className="text-display-rank font-display-rank font-extrabold tabular-nums text-on-surface leading-none">
             {activeCount}
           </span>
@@ -90,7 +90,7 @@ export default function Header({
             language
           </span>
           <span className="text-body-md font-body-md font-bold uppercase tracking-wider">
-            {lang === 'en' ? 'EN/HI' : 'अंग्रेजी/हिंदी'}
+            {t.langToggle[lang]}
           </span>
         </button>
 
@@ -104,19 +104,6 @@ export default function Header({
             {darkMode ? 'light_mode' : 'dark_mode'}
           </span>
         </button>
-
-        {/* Bandwidth Toggle */}
-        {/* <button
-          onClick={() => setLowBandwidth(!lowBandwidth)}
-          className={`flex items-center text-on-surface-variant hover:text-primary transition-colors duration-150 focus:outline-none ${
-            lowBandwidth ? 'text-secondary' : 'text-on-surface-variant'
-          }`}
-          title={t.lowBandwidthToggle[lang]}
-        >
-          <span className="material-symbols-outlined text-[20px]">
-            signal_cellular_alt
-          </span>
-        </button> */}
 
       </div>
     </header>
