@@ -14,7 +14,8 @@ export default function PriorityList({ lang }) {
         setTimeout(() => {
           const firstNewElement = containerRef.current.children[5];
           if (firstNewElement) {
-            firstNewElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const targetScrollTop = firstNewElement.offsetTop - (containerRef.current.clientHeight / 2) + (firstNewElement.clientHeight / 2);
+            containerRef.current.scrollTo({ top: targetScrollTop, behavior: 'smooth' });
           }
         }, 220);
       } else {
@@ -84,20 +85,17 @@ export default function PriorityList({ lang }) {
   };
 
   return (
-    <div className="flex flex-col h-full select-none transition-colors duration-300 relative">
+    <div className="flex flex-col h-auto xl:h-full select-none transition-colors duration-300 overflow-hidden">
       
       {/* Section Header Row */}
       <div className="flex items-center justify-between border-b border-outline-variant pb-3 mb-2 h-10 pr-8">
         <h2 className="text-label-caps font-label-caps tracking-widest text-outline uppercase font-semibold">
           {t.sectionTitle[lang]}
         </h2>
-        {/* <span className="text-data-mono font-data-mono text-outline uppercase tracking-wider">
-          {t.autoRefresh[lang]}
-        </span> */}
       </div>
 
-      {/* Row Items Container (No empty-state path since items are actioned in place) */}
-      <div ref={containerRef} className="flex-grow overflow-y-auto flex flex-col mb-6 pr-1 scrollbar-thin">
+      {/* Row Items Container */}
+      <div ref={containerRef} className="flex-grow overflow-y-visible xl:overflow-y-auto flex flex-col mb-6 pr-1 scrollbar-thin relative">
         {actionItems.map((item, index) => {
           const formattedRank = String(item.rank).padStart(2, '0');
           const currentStatus = statuses[item.id];
@@ -209,7 +207,7 @@ export default function PriorityList({ lang }) {
       </div>
 
       {/* View More Button */}
-      <div className="flex justify-center py-4 shrink-0 border-t border-outline-variant pr-8">
+      <div className="flex justify-end py-4 shrink-0 border-t border-outline-variant pr-8">
         <button
           onClick={() => setExpanded(!expanded)}
           className="text-data-mono font-data-mono text-outline hover:text-primary transition-colors duration-150 uppercase tracking-wider font-semibold focus:outline-none flex items-center gap-1"
@@ -222,7 +220,7 @@ export default function PriorityList({ lang }) {
       </div>
 
       {/* Floating Toast Notification Container */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 max-w-md w-full pointer-events-none">
+      <div className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:w-96 z-50 flex flex-col gap-3 pointer-events-none">
         {toasts.map((toast) => (
           <div
             key={toast.id}

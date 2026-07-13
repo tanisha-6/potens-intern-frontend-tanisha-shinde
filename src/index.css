@@ -4,21 +4,21 @@
 
 :root {
   /* LIGHT MODE THEME TOKENS - Soft champagne slate palette, no pure #FFFFFF */
-  --color-background: #E8E7E2;
-  --color-surface: #E8E7E2;
-  --color-surface-dim: #DCDBD5;
+  --color-background: #DEDDD8;
+  --color-surface: #DEDDD8;
+  --color-surface-dim: #D2D1CB;
   --color-surface-bright: #FAFAF8;
-  --color-surface-variant: #E4E3DD;
-  --color-surface-container-lowest: #F2F1EC;
+  --color-surface-variant: #E2E1DB;
+  --color-surface-container-lowest: #F4F3EF;
   --color-surface-container-low: #ECEBE5;
-  --color-surface-container: #E4E3DD;
-  --color-surface-container-high: #DBDAD3;
-  --color-surface-container-highest: #D2D1C9;
+  --color-surface-container: #E2E1DB;
+  --color-surface-container-high: #D6D5CE;
+  --color-surface-container-highest: #C9C8C0;
   --color-on-surface: #1A1C1E;
-  --color-on-surface-variant: #46484C;
+  --color-on-surface-variant: #3A3C40;
   --color-on-background: #1A1C1E;
-  --color-outline: #767771;
-  --color-outline-variant: #C6C6C0;
+  --color-outline: #6E706B;
+  --color-outline-variant: #B8B7B0;
   
   /* Primary deep sophisticated charcoal-steel blue */
   --color-primary: #2B303A;

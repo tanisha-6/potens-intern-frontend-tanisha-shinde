@@ -52,14 +52,14 @@ export default function Header({
   };
 
   return (
-    <header className="h-28 w-full bg-background border-b border-outline-variant text-on-surface flex items-center justify-between px-8 select-none transition-colors duration-300">
+    <header className="min-h-[7rem] w-full bg-background border-b border-outline-variant text-on-surface flex flex-col md:flex-row items-center justify-between px-6 md:px-8 py-4 md:py-0 gap-4 md:gap-0 select-none transition-colors duration-300">
       
       {/* Left: App Title & Stacked Live Clock */}
-      <div className="flex flex-col items-start justify-center">
-        <h1 className="text-[30px] font-sans font-bold text-on-surface tracking-tight leading-none select-none">
+      <div className="flex flex-col items-center md:items-start justify-center text-center md:text-left">
+        <h1 className="text-[20px] sm:text-[24px] md:text-[28px] font-sans font-semibold text-on-surface tracking-[-0.02em] leading-none select-none">
           {strings.appTitle[lang]}
         </h1>
-        <span className="text-[16px] font-data-mono text-outline mt-2 tracking-wide font-medium select-none">
+        <span className="text-[12px] sm:text-[14px] md:text-[16px] font-data-mono text-outline mt-1.5 sm:mt-2 tracking-wide font-medium select-none">
           {formatDateTime(currentTime)}
         </span>
       </div>

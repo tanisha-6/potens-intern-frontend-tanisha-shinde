@@ -10,7 +10,7 @@ function App() {
     if (saved !== null) {
       return saved === 'dark'
     }
-    return true // Defaulting to dark mode to match high-visual Stitch black styling
+    return false // Defaulting to light mode on first-ever visit
   })
   const [lowBandwidth, setLowBandwidth] = useState(false)
 
@@ -36,8 +36,8 @@ function App() {
         setLowBandwidth={setLowBandwidth}
       />
 
-      <main className="flex-1 px-8 py-6 xl:overflow-hidden">
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-0 h-full divide-y xl:divide-y-0 xl:divide-x divide-outline-variant">
+      <main className="flex-grow flex-1 px-8 py-6 xl:overflow-hidden flex flex-col h-auto xl:h-full">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-0 h-auto xl:h-full divide-y xl:divide-y-0 xl:divide-x divide-outline-variant">
           
           {/* Priority List (Left Column, col-span-8) */}
           <div className="col-span-12 xl:col-span-8 xl:h-full xl:overflow-hidden pb-6 xl:pb-0">
